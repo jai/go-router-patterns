@@ -2,25 +2,32 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: gorouters
-  labels: {app: gorouters}
+  labels:
+    app: gorouters
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: gorouters
   template:
-    metadata: {labels: {app: gorouters}}
+    metadata:
+      labels:
+        app: gorouters
     spec:
       containers:
         - name: gorouters
-          image: registry-intl.ap-southeast-5.aliyuncs.com/sandbox-jai/sandbox-repo:[tag]:${TAG}
+          image: registry-intl.ap-southeast-5.aliyuncs.com/sandbox-jai/sandbox-repo:${TAG}
           command:
           ports:
             - containerPort: 8080
-          volumeMounts:
-            - name: gorouters-config
-              mountPath: /etc/gorouters/
-              readOnly: true
-      volumes:
-        - name: gorouters-config
-          configMap: { name: news-config }
+#          volumeMounts:
+#            - name: gorouters-config
+#              mountPath: /etc/gorouters/
+#              readOnly: true
+#      volumes:
+#        - name: gorouters-config
+#          configMap:
+#            name: gorouters-config
 
 ---
 kind: Service
