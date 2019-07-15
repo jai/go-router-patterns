@@ -6,7 +6,7 @@ import (
 )
 
 // Using Gin
-func setupRouter() *gin.Engine {
+func setupGinRouter() *gin.Engine {
 	r := gin.Default()
 
 	r.GET("/ping", func(c *gin.Context) {
@@ -17,6 +17,6 @@ func setupRouter() *gin.Engine {
 }
 
 func main() {
-	r := setupRouter()
+	r := setupGinRouter()
 	r.Run(":8080")
 }
