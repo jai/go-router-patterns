@@ -9,7 +9,7 @@ import (
 func setupGinRouter() *gin.Engine {
 	r := gin.Default()
 
-	r.GET("/ping", func(c *gin.Context) {
+	r.GET("/gin/ping", func(c *gin.Context) {
 		c.String(http.StatusOK, "pong")
 	})
 
