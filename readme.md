@@ -7,7 +7,9 @@
 **Go routers/muxes:**
 * Gin (done)
 * Gorilla (not started)
-* Other
+* Other (not started)
+  * https://blog.merovius.de/2017/06/18/how-not-to-use-an-http-router.html
+  * https://medium.com/statuscode/how-i-write-go-http-services-after-seven-years-37c208122831
 
 **Containerization methods:**
 * Plain Docker image `docker build .` using current Dockerfile (done)
