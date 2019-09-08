@@ -18,5 +18,5 @@ func setupGinRouter() *gin.Engine {
 
 func main() {
 	r := setupGinRouter()
-	r.Run(":8080")
+	_ = r.Run(":8080")
 }
